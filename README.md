@@ -5,7 +5,7 @@
 ## Setting up
 Clone repository and set up environment by:
 
-<pre><code>$ pip install -r requirements.txt --user
+<pre><code>$ pip install -r requirements.txt
 </code></pre>
 
 Created on Python 3.7 Win10
