@@ -1,15 +1,20 @@
 # DeepfakeDetective
 ## Basic web application skeleton for identifying Deepfakes 
-Completely dockerized using docker-compose and flask/nginx/uwsgi.
+Built using flask and
+1. MTCNN for face detection (https://github.com/davidsandberg/facenet)
+2. InceptionResNetV1 + DBSCAN for actor face clustering (https://github.com/davidsandberg/facenet)
+3. EfficientNet for deepfakedetection per face (https://github.com/lukemelas/EfficientNet-PyTorch)
+
+
 
 
 ## Setting up
 Clone repository and set up environment by:
 
-<pre><code>$ docker-compose up --build
+<pre><code>$ pip install -r requirements.txt
 </code></pre>
 
 ## Usage
-Once docker-compse is up, connect to localhost:5000.
+Once app is up, connect to localhost:5000.
 From there, paste any YouTube link into the search bar to estimate the deepfakeness of each actor in the clip.
 Currently, a relatively weak model is deployed, this will be changed in future updates.
