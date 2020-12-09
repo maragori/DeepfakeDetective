@@ -23,7 +23,7 @@ app = Flask(__name__)
 path_to_model = 'model/'
 
 # cuda stuff
-device = torch.device("cpu")
+device = torch.device("cuda")
 
 # load model
 model = init_detective_model(path_to_model, device)
@@ -55,4 +55,5 @@ def success(name):
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0")
+    # app.run(host="0.0.0.0")
+    app.run()

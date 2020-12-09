@@ -1,3 +1,7 @@
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+
 import numpy as np
 from itertools import compress
 import torchvision.transforms as transforms
@@ -10,7 +14,7 @@ import os
 import shutil
 import uuid
 import time
-import matplotlib.pyplot as plt
+
 
 # face detection and embeddings modules
 from facenet_pytorch import MTCNN, InceptionResnetV1
@@ -261,7 +265,7 @@ def get_clusters(url, device, process_id):
 
     # load face detector
     face_detector = MTCNN(image_size=224, margin=10, min_face_size=100, keep_all=True, device=device, post_process=False).eval()
-    face_detection = FaceDetection(face_detector, device, n_frames=50)
+    face_detection = FaceDetection(face_detector, device, n_frames=30)
 
     # load model for face embeddings
     resnet = InceptionResnetV1(pretrained='vggface2').eval()
